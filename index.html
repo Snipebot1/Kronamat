@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173e2c">
+<title>Kronamat – Smartare mat. Lägre pris.</title>
+<style>
+:root{--green:#173e2c;--accent:#d7edbd;--action:#347444;--bg:#f5f7f2;--card:#fff;--ink:#1e2a22;--muted:#68756b;--line:#e2e8df;--soft:#eaf1e6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body.dark{--bg:#151a20;--card:#222c26;--ink:#edf3ed;--muted:#b1beb3;--line:#39463c;--soft:#263a2e}
+button,input,select{font:inherit}button{cursor:pointer;border:0}
+.top{background:var(--green);color:white;padding:22px max(20px,calc((100% - 1080px)/2));}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:13px;background:var(--accent);color:var(--green);display:grid;place-items:center;font-size:26px;font-weight:900}.brandname{font-size:24px;font-weight:850;letter-spacing:-.5px}.tagline{color:var(--accent);font-size:11px;letter-spacing:1.5px}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:15px}.theme{background:#ffffff20;color:white;border:1px solid #ffffff55;border-radius:10px;padding:9px 12px}
+.hero{max-width:1080px;margin:24px auto 0;display:grid;grid-template-columns:1fr minmax(240px,360px);gap:20px;align-items:end}.hero h1{font-size:clamp(26px,4vw,38px);line-height:1.08;margin:0 0 8px}.hero p{color:#d7edbd;margin:0}.search{display:flex;gap:8px;background:white;border-radius:12px;padding:6px 10px;align-items:center}.search input{width:100%;border:0;outline:0;color:#203126;padding:8px;background:transparent}
+.wrap{max-width:1080px;margin:auto;padding:18px 18px 50px}.nav{display:flex;gap:6px;overflow:auto;padding:7px;background:var(--soft);border-radius:14px;margin-bottom:22px}.nav button{background:transparent;color:var(--muted);padding:10px 14px;border-radius:10px;white-space:nowrap;font-weight:650}.nav button.active{background:var(--green);color:white}
+h2{font-size:23px;margin:0 0 4px}h3{font-size:16px;margin:0}.sub{color:var(--muted);margin:0 0 18px;font-size:13px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.promo{background:linear-gradient(120deg,#e0efd9,#f0f6e9);color:#173e2c;padding:22px;border-radius:18px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;gap:15px}.promo strong{font-size:21px;display:block}.promo p{margin:4px 0 12px;color:#526b57}.pill{font-size:11px;font-weight:800;background:#d7edbd;color:#285c35;border-radius:99px;padding:5px 9px;white-space:nowrap}
+.categories{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}.chip{background:var(--card);border:1px solid var(--line);color:var(--ink);padding:8px 13px;border-radius:99px}.chip.active{background:var(--green);color:white;border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.product,.panel,.store{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px}.producttop{display:flex;gap:13px;align-items:center}.food{width:65px;height:65px;display:grid;place-items:center;background:var(--soft);border-radius:13px;font-size:34px;flex:none}.pinfo{min-width:0;flex:1}.pinfo h3{margin-bottom:3px}.muted{color:var(--muted);font-size:12px}.price{font-size:20px;font-weight:850;color:var(--action);margin-top:5px}.old{font-size:12px;color:var(--muted);text-decoration:line-through;margin-left:5px;font-weight:400}.productbottom{display:flex;justify-content:space-between;align-items:center;margin-top:12px}.heart{background:var(--soft);color:var(--green);width:35px;height:35px;border-radius:10px;font-size:18px}.heart.saved{background:#fce8e8;color:#bd3434}
+.primary{background:var(--action);color:white;padding:11px 15px;border-radius:10px;font-weight:700}.secondary{background:var(--soft);color:var(--green);padding:10px 13px;border-radius:10px;font-weight:700}.full{width:100%}
+select{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px}
+.mapbox{min-height:230px;border-radius:16px;background:linear-gradient(135deg,#e5eee0,#d4e5d2);color:#244d30;display:grid;place-items:center;text-align:center;padding:22px;margin:15px 0}.mapbox .mapemoji{font-size:45px}
+.storelist{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.store .storeicon{font-size:27px;margin-bottom:8px}.store p{color:var(--muted);font-size:12px}
+.profilehead{display:flex;align-items:center;gap:12px}.avatar{width:54px;height:54px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:26px}.pricebox{background:var(--soft);border-radius:15px;padding:18px;margin-top:14px}.pricebox .big{font-size:28px;font-weight:850;color:var(--action)}
+.empty{text-align:center;padding:35px 15px;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:15px}
+footer{text-align:center;color:var(--muted);font-size:11px;margin-top:30px;letter-spacing:1.4px}
+.hidden{display:none!important}
+@media(max-width:650px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.storelist{grid-template-columns:1fr}.top{padding:18px}.wrap{padding:14px 12px 40px}.promo{align-items:flex-start}.hero{margin-top:18px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="toprow">
+    <div class="brand"><div class="logo">K</div><div><div class="brandname">Kronamat</div><div class="tagline">SMARTARE MAT. LÄGRE PRIS.</div></div></div>
+    <button class="theme" id="themeBtn">🌙 Mörkt läge</button>
+  </div>
+  <div class="hero">
+    <div><h1>Spara pengar på maten.</h1><p>Hitta erbjudanden och jämför matpriser på ett ställe.</p></div>
+    <label class="search">⌕ <input id="search" type="search" placeholder="Sök efter matvaror..."></label>
+  </div>
+</header>
+<main class="wrap">
+  <nav class="nav" aria-label="Huvudmeny">
+    <button class="active" data-page="home">⌂ Hem</button><button data-page="offers">🏷 Erbjudanden</button><button data-page="saved">♡ Sparat</button><button data-page="stores">⌖ Butiker</button><button data-page="profile">☻ Profil</button>
+  </nav>
+  <section id="home" class="page">
+    <div class="promo"><div><strong>Din matbudget börjar här.</strong><p>Jämför erbjudanden och hitta billigare mat nära dig.</p><button class="primary" data-goto="offers">Utforska erbjudanden →</button></div><span style="font-size:48px">🛒</span></div>
+    <div class="sectionhead"><div><h2>Dagens erbjudanden</h2><p class="sub">Exempel på erbjudanden i Kronamat</p></div><span class="pill">DEMO</span></div>
+    <div class="categories" id="categories"></div><div class="grid" id="homeProducts"></div>
+  </section>
+  <section id="offers" class="page hidden">
+    <div class="sectionhead"><div><h2>Alla erbjudanden</h2><p class="sub">Hitta produkter till bättre priser.</p></div></div>
+    <div class="categories" id="offerCategories"></div><div class="grid" id="offerProducts"></div>
+  </section>
+  <section id="saved" class="page hidden">
+    <h2>Dina sparade produkter</h2><p class="sub">Spara produkter som du vill hålla koll på.</p><div id="savedProducts"></div>
+    <div class="panel" style="margin-top:14px"><h3>🔔 Prisnotiser</h3><p class="muted">I den färdiga appen får du en notis när en sparad produkt får ett nytt erbjudande.</p></div>
+  </section>
+  <section id="stores" class="page hidden">
+    <h2>Hitta matbutiker</h2><p class="sub">Välj vilka butiker du vill jämföra.</p>
+    <select id="storeFilter"><option>Alla butiker</option><option>ICA</option><option>Willys</option><option>Coop</option></select>
+    <div class="mapbox"><div><div class="mapemoji">📍 🗺️</div><h3>Butikskarta</h3><p>Här visas närliggande butiker när platsfunktionen är ansluten.</p><span class="pill">KARTVY – KONCEPT</span></div></div>
+    <div class="storelist" id="storeList"></div>
+  </section>
+  <section id="profile" class="page hidden">
+    <h2>Min profil</h2><p class="sub">Hantera konto och inställningar.</p>
+    <div class="panel"><div class="profilehead"><div class="avatar">👤</div><div><h3>Mitt Kronamat-konto</h3><span class="muted">Demoanvändare</span></div></div><hr style="border:0;border-top:1px solid var(--line);margin:17px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center"><b>Offline-läge</b><button class="secondary" id="offlineBtn">Avstängt</button></div><p class="muted">I en färdig version kan sparade produkter visas även utan internetanslutning.</p>
+    </div>
+    <div class="pricebox"><h3>Kronamat Premium</h3><div class="big">79,99 kr/mån</div><p>3 veckor gratis provperiod</p><ul><li>Alla erbjudanden</li><li>Prisbevakning</li><li>Butiksjämförelse</li><li>Offline-läge</li></ul><b>Studentpris: 49,99 kr/mån</b><p class="muted">Prenumerationen är endast en visuell demonstration.</p><button class="primary full" data-goto="offers">Utforska Kronamat</button></div>
+  </section>
+  <footer>KRONAMAT · SMARTARE MAT. LÄGRE PRIS.</footer>
+</main>
+<script>
+const products=[
+{name:"Kycklingfilé",store:"ICA",price:"69,90 kr",old:"99,90 kr",discount:"−30%",category:"Kött",emoji:"🍗"},
+{name:"Nötfärs 500 g",store:"Willys",price:"49,90 kr",old:"79,90 kr",discount:"−38%",category:"Kött",emoji:"🥩"},
+{name:"Laxfilé",store:"Coop",price:"89,90 kr",old:"119,90 kr",discount:"−25%",category:"Fisk",emoji:"🐟"},
+{name:"Bananer 1 kg",store:"ICA",price:"19,90 kr",old:"27,90 kr",discount:"−29%",category:"Frukt",emoji:"🍌"},
+{name:"Mjölk 1,5 l",store:"Willys",price:"12,90 kr",old:"17,90 kr",discount:"−28%",category:"Mejeri",emoji:"🥛"},
+{name:"Ägg 12-pack",store:"Coop",price:"29,90 kr",old:"39,90 kr",discount:"−25%",category:"Mejeri",emoji:"🥚"}
+];
+let category="Alla", store="Alla butiker", query="", saved=JSON.parse(localStorage.getItem("kronamatSaved")||'["Kycklingfilé"]');
+const cats=["Alla","Kött","Fisk","Frukt","Mejeri"];
+function persist(){localStorage.setItem("kronamatSaved",JSON.stringify(saved))}
+function filtered(){return products.filter(p=>(category==="Alla"||p.category===category)&&(store==="Alla butiker"||p.store===store)&&p.name.toLowerCase().includes(query.toLowerCase()))}
+function categoryButtons(target){document.getElementById(target).innerHTML=cats.map(c=>`<button class="chip ${category===c?"active":""}" data-cat="${c}">${c}</button>`).join("")}
+function productCard(p){let is=saved.includes(p.name);return `<article class="product"><div class="producttop"><div class="food">${p.emoji}</div><div class="pinfo"><h3>${p.name}</h3><div class="muted">${p.store} · ${p.category}</div><div class="price">${p.price}<span class="old">${p.old}</span></div></div><span class="pill">${p.discount}</span></div><div class="productbottom"><span class="muted">Exempelpris · demo</span><button class="heart ${is?"saved":""}" data-save="${p.name}" aria-label="Spara ${p.name}">${is?"♥":"♡"}</button></div></article>`}
+function render(){categoryButtons("categories");categoryButtons("offerCategories");document.getElementById("homeProducts").innerHTML=filtered().map(productCard).join("")||'<div class="empty">Inga produkter hittades.</div>';document.getElementById("offerProducts").innerHTML=filtered().map(productCard).join("")||'<div class="empty">Inga produkter hittades.</div>';
+let chosen=products.filter(p=>saved.includes(p.name));document.getElementById("savedProducts").innerHTML=chosen.length?`<div class="grid">${chosen.map(productCard).join("")}</div>`:'<div class="empty"><div style="font-size:32px">♡</div><b>Du har inga sparade produkter ännu.</b><p>Spara en produkt bland erbjudandena.</p><button class="primary" data-goto="offers">Hitta produkter</button></div>';
+document.getElementById("storeList").innerHTML=["ICA","Willys","Coop"].filter(s=>store==="Alla butiker"||store===s).map(s=>`<article class="store"><div class="storeicon">🏪</div><h3>${s}</h3><p>${products.filter(p=>p.store===s).length} exempel-erbjudanden</p><button class="secondary full" data-store="${s}">Visa erbjudanden</button></article>`).join("");
+}
+function go(page){document.querySelectorAll(".page").forEach(el=>el.classList.toggle("hidden",el.id!==page));document.querySelectorAll(".nav button").forEach(el=>el.classList.toggle("active",el.dataset.page===page));window.scrollTo({top:0,behavior:"smooth"})}
+document.addEventListener("click",e=>{let b=e.target.closest("button");if(!b)return;if(b.dataset.page)go(b.dataset.page);if(b.dataset.goto)go(b.dataset.goto);if(b.dataset.cat){category=b.dataset.cat;render()}if(b.dataset.save){saved=saved.includes(b.dataset.save)?saved.filter(x=>x!==b.dataset.save):[...saved,b.dataset.save];persist();render()}if(b.dataset.store){store=b.dataset.store;document.getElementById("storeFilter").value=store;go("offers");render()}});
+document.getElementById("search").addEventListener("input",e=>{query=e.target.value;render()});
+document.getElementById("storeFilter").addEventListener("change",e=>{store=e.target.value;render()});
+document.getElementById("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("dark");document.getElementById("themeBtn").textContent=document.body.classList.contains("dark")?"☀️ Ljust läge":"🌙 Mörkt läge"});
+let offline=false;document.getElementById("offlineBtn").addEventListener("click",e=>{offline=!offline;e.target.textContent=offline?"Aktiverat":"Avstängt"});
+render();
+</script>
+</body>
+</html>
